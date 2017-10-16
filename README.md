@@ -23,7 +23,7 @@
 
 3.	Specifications:
 
-My Photographer it’s a web application developed in ASP.NET MVC framework with database Microsoft SQL Server.
+My Photographer it’s a web application developed with database Microsoft SQL Server.
 
 Details: A photographer can register and login, add photos, edit it's page, visit other photographers pages and rate them.
 A User can visit the site, and see a Preview of the site, and only if he wants to rate, or see more details of a certain Photographer, than he has to register and login. 
