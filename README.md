@@ -16,14 +16,13 @@
 
 •	Actions:
 -	A user can register and login
--	A user can create own page
--	A user can edit own page
 -	A user can add photos
+-   A user can rate other photographers
 
 
 3.	Specifications:
 
 My Photographer it’s a web application developed with PHP and My SQL Server for database .
 
-Details: A photographer can register and login, add photos, edit it's own page, visit other photographers pages and rate them.
+Details: A photographer can register and login, add photos, visit other photographers pages and rate them.
 A User can visit the site, and see a Preview of the site, and only if he wants to rate, or see more details of a certain Photographer, than he has to register and login. 
