@@ -612,7 +612,7 @@ header .fh5co-navbar-brand .fh5co-logo:active, header .fh5co-navbar-brand .fh5co
 .fh5co-services-single .fh5co-services i {
   font-size: 80px;
 }
-/*
+
 .contact-info {
   margin-bottom: 4em;
   padding: 0;
@@ -624,7 +624,7 @@ header .fh5co-navbar-brand .fh5co-logo:active, header .fh5co-navbar-brand .fh5co
   padding-left: 300px;
 }
 .contact-info li i {
-  position: absolute;
+  position: relative;
   top: .3em;
   left: 0;
   font-size: 22px;
@@ -633,7 +633,7 @@ header .fh5co-navbar-brand .fh5co-logo:active, header .fh5co-navbar-brand .fh5co
 .contact-info li a {
   color: #A7CDCC;
 }
-*/
+
 .form-control {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
@@ -648,6 +648,7 @@ header .fh5co-navbar-brand .fh5co-logo:active, header .fh5co-navbar-brand .fh5co
   -moz-border-radius: 0px;
   -ms-border-radius: 0px;
   border-radius: 0px;
+
 }
 .form-control:focus, .form-control:active {
   box-shadow: none;
