@@ -120,11 +120,11 @@
 							</div>
 							<div class="col-md-6"> 
 								<div class "col-md-12">
-									<h3>  Already have an account?  </h3>
+									<h3> <u> Already have an account? </u>  </h3>
 								</div>
 								<div class="form-group"> 
 									<input type="text" class="form-control" name = "username" placeholder="Username"> <br>
-									<input type="text" class="form-control" name = "email" placeholder="Email">
+									<input type="password" class="form-control" name = "password" placeholder="Password">
 								</div> 
 								<div class="form-group">
 									<input type="submit" value="Login" class="btn btn-primary">
@@ -147,7 +147,7 @@
 			</div>
 		</div>
 		<!-- End: fh5co-contact-section -->
-		<div id="map" class="fh5co-map animate-box"></div>
+		<!--<div id="map" class="fh5co-map animate-box"></div> -->
 			<!-- END map -->
 		<footer>
 			<div id="footer">

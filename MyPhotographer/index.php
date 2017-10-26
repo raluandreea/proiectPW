@@ -67,11 +67,11 @@
 		<div class="js-fullheight fh5co-table">
 			<div class="fh5co-table-cell js-fullheight">
 				<ul>
-					<li><a href="index.html">Home</a></li>
+					<li><a href="index.php">Home</a></li>
 					<li><a href="portfolio.html">Portfolio</a></li>
 					<!-- <li><a href="services.html">Services</a></li> -->
 					<li><a href="team.html">Team</a></li>
-					<li><a href="signup.html">Log In / Register</a></li>
+					<li><a href="signup.php">Log In / Register</a></li>
 				</ul>
 			</div>
 		</div>
@@ -103,7 +103,7 @@
 					<!-- <li><span class="filter" data-filter=".app">App</span></li> -->
 					<li><span class="filter" data-filter=".gallery">Gallery</span></li>
 					<!-- <li><span class="filter" data-filter=".contact">Contact</span></li> -->
-					<li><span class="filter" data-filter=".discover">Discover</span></li>
+					<!-- <li><span class="filter" data-filter=".discover">Discover</span></li> -->
 					<!-- <li><span class="filter" data-filter=".web">Web</span></li> -->
 				</ul>
 
@@ -111,7 +111,7 @@
 					
 					<div class="portfolio all gallery" data-cat="gallery">
 						<div class="portfolio-wrapper">				
-							<img src="images/portrait1.jpg" alt="" />
+							 <img src="images/portrait1.jpg" alt="" />
 							<div class="label">
 								<div class="label-text">
 									<a class="text-title">Portraits</a>
@@ -376,4 +376,3 @@
 
 	</body>
 </html>
-

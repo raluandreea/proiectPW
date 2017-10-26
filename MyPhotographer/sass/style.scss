@@ -544,7 +544,7 @@ header{
 }
 
 .portfolio {
-	overflow: hidden;
+	overflow: visible;//hidden
 	position: relative;
 	z-index: 1;
 	float: left;
