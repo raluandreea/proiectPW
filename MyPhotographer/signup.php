@@ -71,7 +71,7 @@
 					<li><a href="portfolio.html">Portfolio</a></li>
 					<!-- <li><a href="services.html">Services</a></li> -->
 					<li><a href="team.html">Team</a></li>
-					<li><a href="signup.php">Log In / Register</a></li>
+					<li><a href="signup.html">Sign in / Sign up</a></li>
 				</ul>
 			</div>
 		</div>
@@ -91,7 +91,7 @@
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
 						<h2><b>Welcome!</b></h2>
-						<h4>Log In or Register</h4>
+						<h4>Sign in or Sign up</h4>
 					</div>
 				</div>
 				<div class="row">
@@ -104,50 +104,78 @@
 							<!-- <li><i class="icon-globe2"></i><a href="#">www.yoursite.com</a></li> -->
 						<!-- </ul> -->
 					<!-- </div> -->
-					<div class="col-md-8 col-md-pull-4 animate-box">
-						<div class="row">
-							<div class="col-md-6">
-								<div class "col-md-12">
+					
+						
+							<!--partea de signup-->
+								<div class="col-xs-6">
 									<h3> <b> Create an account.  </b>  </h3>
-								</div>
+								
 								<div class="form-group">
-									<input type="text" class="form-control" name = "First Name" placeholder="First Name"> <br>
-									<input type="text" class="form-control" name = "Last Name" placeholder="Last Name"> <br>
-									<input type="text" class="form-control" name = "username" placeholder="username"> <br>
-									<input type="text" class="form-control" name = "email" placeholder="Email"> <br>
-									<input type="password" class="form-control" name = "password" placeholder="Password">
+								<form method = "POST" action = "Myphotographer_PHP/signup.inc.php">
+									<input type="text" class="form-control" name ="nume" placeholder="First Name"> <br>
+									<input type="text" class="form-control" name ="prenume" placeholder="Last Name"> <br>
+									<input type="text" class="form-control" name ="username" placeholder="username"> <br>
+									<input type="text" class="form-control" name ="email" placeholder="Email"> <br>
+									<input type="password" class="form-control" name ="password" placeholder="Password"> <br>
+									<!--Gender-->
+									<input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female">Female
+ 									 <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="male">Male
+ 									<!--<span class="error">* <?php echo $genderErr;?></span> -->
+ 									 <br><br>
 								</div>
 							</div>
-							<div class="col-md-6"> 
-								<div class "col-md-12">
+							
+							
+							<!--partea de login-->
+								<div class="col-xs-6">
 									<h3> <u> Already have an account? </u>  </h3>
-								</div>
+								
 								<div class="form-group"> 
+									<form method="POST" action = "Myphotographer_PHP/login.inc.php">
 									<input type="text" class="form-control" name = "username" placeholder="Username"> <br>
 									<input type="password" class="form-control" name = "password" placeholder="Password">
 								</div> 
 								<div class="form-group">
 									<input type="submit" value="Login" class="btn btn-primary">
 								</div>
-							</div> 
-							<!-- <div class="col-md-12"> -->
-								<!-- <div class="form-group"> -->
-									<!-- <textarea name="" class="form-control" id="" cols="30" rows="7" placeholder="Message"></textarea> -->
-								<!-- </div> -->
-							<!-- </div> -->
+							 </div>
+							</form>
+							<?php
+								if(isset($_GET['info']) && $_GET['info'] == 'gresit'){
+									echo '<p> Parola este gresita! </p>' ;
+								}
+							?>
+
 							<div class="col-md-12">
 								<div class="form-group">
 									<input type="submit" value="Register" class="btn btn-primary">
 								</div>
 								
 							</div>
-						</div>
-					</div>
-				</div>
+							</form>
+							<?php
+								if(isset($_GET['info']) && $_GET['info'] == 'exista'){
+									echo '<p> Usernameul exista deja!</p>' ;
+								}
+							?>
+
+
+
+
+							<!-- <div class="col-md-12"> -->
+								<!-- <div class="form-group"> -->
+									<!-- <textarea name="" class="form-control" id="" cols="30" rows="7" placeholder="Message"></textarea> -->
+								<!-- </div> -->
+							<!-- </div> -->
+							
+							
+						
+					
+				
 			</div>
 		</div>
 		<!-- End: fh5co-contact-section -->
-		<!--<div id="map" class="fh5co-map animate-box"></div> -->
+		<div id="map" class="fh5co-map animate-box"></div>
 			<!-- END map -->
 		<footer>
 			<div id="footer">
