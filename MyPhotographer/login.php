@@ -92,7 +92,6 @@
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
 						<h2><b>Welcome!</b></h2>
-						<h4>Sign in or Sign up</h4>
 					</div>
 				</div>
 				<div class="row">
@@ -108,23 +107,21 @@
 					
 						
 							<!--partea de signup-->
-								<div class="col-md-6 col-md-offset-3 text-center">
-									<h3> <a href="login.php"> <u> Already have an account? </u>  </a> </h3> 
-									<h3 > <b> Create an account.  </b>  </h3>
+								<div class="col-xs-6 text-center">
+								<!--	<h3> <b> Create an account.  </b>  </h3> -->
 								
 								<div class="form-group">
-								<form method = "POST" action = "Myphotographer_PHP/signup.inc.php">
+							<!--	<form method = "POST" action = "Myphotographer_PHP/signup.inc.php">
 									<input type="text" class="form-control" name ="nume" placeholder="First Name"> <br>
 									<input type="text" class="form-control" name ="prenume" placeholder="Last Name"> <br>
 									<input type="text" class="form-control" name ="username" placeholder="username"> <br>
 									<input type="text" class="form-control" name ="email" placeholder="Email"> <br>
 									<input type="password" class="form-control" name ="password" placeholder="Password"> <br>
 									<!--Gender-->
-									<input type="radio" name="gender" value="0"> <?php if (isset($gender) && $gender=="female") echo "checked";?> Female
- 									<input type="radio" name="gender" value="1"> <?php if (isset($gender) && $gender=="male") echo "checked";?> Male
-
- 								<!--	<span class="error">* <?php //echo $genderErr;?></span> -->
- 									
+								<!--	//<input type="radio" name="gender" <?php //if (isset($gender) && $gender=="female") echo "checked";?> value="female">Female
+ 									 <input type="radio" name="gender" <?php //if (isset($gender) && $gender=="male") echo "checked";?> value="male">Male
+ 									<!--<span class="error">* <?php// echo $genderErr;?></span> -->
+ 								<!--	 <br><br> 
 
  									 <div class="col-md-12">
  									 	<div class="form-group">
@@ -133,18 +130,17 @@
  									 	
  									 </div>
 
- 								</form>
+ 								</form> -->
 
 								</div>
 							</div>
 							
-							
-						<!--	<form method="POST" action = "Myphotographer_PHP/login.inc.php">
-							partea de login-->
-							<!--	<div class="col-xs-6">
-									<h3> <u> Already have an account? </u>  </h3>
+							<div class="col-md-6 col-md-offset-4">
+							<form method="POST" action = "Myphotographer_PHP/login.inc.php">
+							<!--partea de login-->
+								<div class="col-xs-8 text-center">
 								
-								<div class="form-group"> 
+								<div class="form-group text-center"> 
 									
 									<input type="text" class="form-control" name = "username" placeholder="Username"> <br>
 									<input type="password" class="form-control" name = "password" placeholder="Password">
@@ -153,20 +149,21 @@
 									<input type="submit" value="Login" class="btn btn-primary" name="submit">
 								</div>
 							 </div>
-							</form> -->
-						<!--<?php
-								//if(isset($_GET['info']) && $_GET['info'] == 'gresit'){
-								//	echo '<p> Parola este gresita! </p>' ;
-								//}
-							?>
-
+							</form>
 							
 							<?php
-								//if(isset($_GET['info']) && $_GET['info'] == 'exista'){
-								//	echo '<p> Usernameul exista deja!</p>' ;
-								//}
-							?>-->
+								if(isset($_GET['info']) && $_GET['info'] == 'gresit'){
+									echo '<p> Parola este gresita! </p>' ;
+								}
+							?>
 
+							<!-- /form -->
+							<?php
+								if(isset($_GET['info']) && $_GET['info'] == 'exista'){
+									echo '<p> Usernameul exista deja!</p>' ;
+								}
+							?>
+</div>
 
 
 
@@ -223,4 +220,3 @@
 
 	</body>
 </html>
-

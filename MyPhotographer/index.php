@@ -67,11 +67,12 @@
 		<div class="js-fullheight fh5co-table">
 			<div class="fh5co-table-cell js-fullheight">
 				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="portfolio.html">Portfolio</a></li>
+					<li><a href="index.php">Home</a></li>
+					<li><a href="portfolio.php">Portfolio</a></li>
 					<!-- <li><a href="services.html">Services</a></li> -->
-					<li><a href="team.html">Team</a></li>
+					<li><a href="team.php">Team</a></li>
 					<li><a href="signup.php">Sign in / Sign up</a></li>
+					<li><a href="login.php">Log in</a></li>
 				</ul>
 			</div>
 		</div>
@@ -81,7 +82,7 @@
 		<header>
 			<div class="container">
 				<div class="fh5co-navbar-brand">
-					<a class="fh5co-logo" href="index.html"> <i class="icon-camera"></i> <b> MyPhotographer </b></a>
+					<a class="fh5co-logo" href="index.php"> <i class="icon-camera"></i> <b> MyPhotographer </b></a>
 				</div>
 				<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
 			</div>
@@ -114,7 +115,8 @@
 							<img src="images/portrait1.jpg" alt="" />
 							<div class="label">
 								<div class="label-text">
-									<a class="text-title">Portraits</a>
+								<!-- Sa fac o sesiune de signed in si daca e signed in sa ma directioneze spre portofolio.php, altfel sa ma directioneze spre signup.php-->
+									<a href="signup.php" class="text-title">Portraits</a>
 									<span class="text-category">Expand</span>
 								</div>
 								<div class="label-bg"></div>
@@ -127,7 +129,7 @@
 							<img src="images/wedding1.jpg" alt="" />
 							<div class="label">
 								<div class="label-text">
-									<a class="text-title">Wedding & Engagements</a>
+									<a href="signup.php" class="text-title">Wedding & Engagements</a>
 									<span class="text-category">Expand</span>
 								</div>
 								<div class="label-bg"></div>
@@ -140,7 +142,7 @@
 							<img src="images/newborn1.jpg" alt="" />
 							<div class="label">
 								<div class="label-text">
-									<a class="text-title">New Born</a>
+									<a href="signup.php" class="text-title">New Born</a>
 									<span class="text-category">Expand</span>
 								</div>
 								<div class="label-bg"></div>
@@ -153,7 +155,7 @@
 							<img src="images/nature2.jpg" alt="" />
 							<div class="label">
 								<div class="label-text">
-									<a class="text-title">Nature</a>
+									<a href="signup.php" class="text-title">Nature</a>
 									<span class="text-category">Expand </span>
 								</div>
 								<div class="label-bg"></div>
@@ -166,7 +168,7 @@
 							<img src="images/car2.jpg" alt="" />
 							<div class="label">
 								<div class="label-text">
-									<a class="text-title">Cars</a>
+									<a href="signup.php" class="text-title">Cars</a>
 									<span class="text-category">Expand</span>
 								</div>
 								<div class="label-bg"></div>
@@ -179,7 +181,7 @@
 							<img src="images/animals1.jpg" alt="" />
 							<div class="label">
 								<div class="label-text">
-									<a class="text-title">Animals</a>
+									<a href="signup.php" class="text-title">Animals</a>
 									<span class="text-category">Expand</span>
 								</div>
 								<div class="label-bg"></div>
@@ -192,7 +194,7 @@
 							<img src="images/family1.jpg" alt="" />
 							<div class="label">
 								<div class="label-text">
-									<a class="text-title">Family</a>
+									<a href="signup.php" class="text-title">Family</a>
 									<span class="text-category">Expand</span>
 								</div>
 								<div class="label-bg"></div>
@@ -205,7 +207,7 @@
 							<img src="images/building2.jpg" alt="" />
 							<div class="label">
 								<div class="label-text">
-									<a class="text-title">Buildings</a>
+									<a href="signup.php" class="text-title">Buildings</a>
 									<span class="text-category">Expand</span>
 								</div>
 								<div class="label-bg"></div>

@@ -66,11 +66,12 @@
 		<div class="js-fullheight fh5co-table">
 			<div class="fh5co-table-cell js-fullheight">
 				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="portfolio.html">Portfolio</a></li>
+					<li><a href="index.php">Home</a></li>
+					<li><a href="portfolio.php">Portfolio</a></li>
 					<!-- <li><a href="services.html">Services</a></li> -->
-					<li><a href="team.html">Team</a></li>
+					<li><a href="team.php">Team</a></li>
 					<li><a href="signup.php">Sign in / Sign up</a></li>
+					<li><a href="login.php">Log In</a></li>
 				</ul>
 			</div>
 		</div>
@@ -80,7 +81,7 @@
 		<header>
 			<div class="container">
 				<div class="fh5co-navbar-brand">
-					<a class="fh5co-logo" href="index.html"> <i class="icon-camera"></i> <b>MyPhotographer</b></a>
+					<a class="fh5co-logo" href="index.php"> <i class="icon-camera"></i> <b>MyPhotographer</b></a>
 				</div>
 				<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
 			</div>

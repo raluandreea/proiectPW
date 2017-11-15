@@ -658,6 +658,10 @@ header .fh5co-navbar-brand .fh5co-logo:active, header .fh5co-navbar-brand .fh5co
 input[type="text"] {
   height: 50px;
 }
+/*separarea gener-urilor*/
+input[type="radio"]{
+  margin: 0 10px 0 10px;
+}
 
 .form-group {
   margin-bottom: 30px;
