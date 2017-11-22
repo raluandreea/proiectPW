@@ -74,7 +74,7 @@ $check = mysqli_num_rows($result);
  	 die();
  } else {
 
-	$query = mysqli_query($db, "INSERT INTO register (nume,prenume,username,email,password,gender,NULL) VALUES('$nume','$prenume','$username','$email','$password','$gender',NULL)")  or die("MySQL Error : ".mysql_error($db)) ;
+	$query = mysqli_query($db, "INSERT INTO register (nume,prenume,username,email,password,gender) VALUES('$nume','$prenume','$username','$email','$password','$gender')")  or die("MySQL Error : " . "<br />" . mysqli_error($db)) ;
 
  
 	if($query)

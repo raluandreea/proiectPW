@@ -134,36 +134,57 @@
 
 								</div>
 							</div>
-							
-							<div class="col-md-6 col-md-offset-4">
-							<form method="POST" action = "Myphotographer_PHP/login.inc.php">
-							<!--partea de login-->
-								<div class="col-xs-8 text-center">
-								
-								<div class="form-group text-center"> 
-									
-									<input type="text" class="form-control" name = "username" placeholder="Username"> <br>
-									<input type="password" class="form-control" name = "password" placeholder="Password">
-								</div> 
-								<div class="form-group">
-									<input type="submit" value="Login" class="btn btn-primary" name="submit">
-								</div>
-							 </div>
-							</form>
-							
 							<?php
-								if(isset($_GET['info']) && $_GET['info'] == 'gresit'){
-									echo '<p> Parola este gresita! </p>' ;
+								if(!isset($_SESSION['id'])){
+									echo '
+										<div class="col-md-6 col-md-offset-4">
+											<form method="POST" action = "Myphotographer_PHP/login.inc.php">
+											<!--partea de login-->
+												<div class="col-xs-8 text-center">
+													<div class="form-group text-center"> 
+														<input type="text" class="form-control" name = "username" placeholder="Username"> <br>
+														<input type="password" class="form-control" name = "password" placeholder="Password">
+													</div> 
+													<div class="form-group">
+														<input type="submit" value="Login" class="btn btn-primary" name="submit">
+													</div>
+											 	</div>
+											</form>
+										</div>
+									';
+								} else {
+									header("Location: ../index.php");
 								}
-							?>
 
-							<!-- /form -->
-							<?php
-								if(isset($_GET['info']) && $_GET['info'] == 'exista'){
-									echo '<p> Usernameul exista deja!</p>' ;
-								}
 							?>
-</div>
+							<!--<div class="col-md-6 col-md-offset-4">
+								<form method="POST" action = "Myphotographer_PHP/login.inc.php"> -->
+								<!--partea de login-->
+								<!--<div class="col-xs-8 text-center">
+									
+										<div class="form-group text-center"> 
+											
+											<input type="text" class="form-control" name = "username" placeholder="Username"> <br>
+											<input type="password" class="form-control" name = "password" placeholder="Password">
+										</div> 
+										<div class="form-group">
+											<input type="submit" value="Login" class="btn btn-primary" name="submit">
+										</div>
+								 	</div>
+								</form> -->
+							
+								<!--<?php 
+									//if(isset($_GET['info']) && $_GET['info'] == 'gresit'){
+									//	echo '<p> Parola este gresita! </p>' ;
+									//}
+								?>
+
+								<?php
+									//if(isset($_GET['info']) && $_GET['info'] == 'exista'){
+									//	echo '<p> Usernameul exista deja!</p>' ;
+									//}
+								?> 
+							</div> -->
 
 
 

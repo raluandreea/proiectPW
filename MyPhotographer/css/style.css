@@ -659,7 +659,7 @@ input[type="text"] {
   height: 50px;
 }
 /*separarea gener-urilor*/
-input[type="radio"]{
+.separator{
   margin: 0 10px 0 10px;
 }
 
@@ -718,5 +718,16 @@ input[type="radio"]{
 .js .animate-box {
   opacity: 0;
 }
+.gender span {
+  display: inline-block;
+  font-size: 20px;
+  width: 100px;
+  float:left;
+}
+.gender {
+  width: 100%;
+
+}
+
 
 /*# sourceMappingURL=style.css.map */

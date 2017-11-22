@@ -108,82 +108,52 @@
 					
 						
 							<!--partea de signup-->
-								<div class="col-md-6 col-md-offset-3 text-center">
+							<div class="col-md-6 col-md-offset-3 text-center">
 									<h3> <a href="login.php"> <u> Already have an account? </u>  </a> </h3> 
 									<h3 > <b> Create an account.  </b>  </h3>
 								
 								<div class="form-group">
-								<form method = "POST" action = "Myphotographer_PHP/signup.inc.php">
-									<input type="text" class="form-control" name ="nume" placeholder="First Name"> <br>
-									<input type="text" class="form-control" name ="prenume" placeholder="Last Name"> <br>
-									<input type="text" class="form-control" name ="username" placeholder="username"> <br>
-									<input type="text" class="form-control" name ="email" placeholder="Email"> <br>
-									<input type="password" class="form-control" name ="password" placeholder="Password"> <br>
-									<!--Gender-->
-									<input type="radio" name="gender" value="0"> <?php if (isset($gender) && $gender=="female") echo "checked";?> Female
- 									<input type="radio" name="gender" value="1"> <?php if (isset($gender) && $gender=="male") echo "checked";?> Male
+									<form method = "POST" action = "Myphotographer_PHP/signup.inc.php">
+										<input type="text" class="form-control" name ="nume" placeholder="First Name"> <br>
+										<input type="text" class="form-control" name ="prenume" placeholder="Last Name"> <br>
+										<input type="text" class="form-control" name ="username" placeholder="username"> <br>
+										<input type="text" class="form-control" name ="email" placeholder="Email"> <br>
+										<input type="password" class="form-control" name ="password" placeholder="Password"> <br>
+										<!--Gender-->
+										<div class="gender">
+	 										<span> <input type="radio" name="gender" value="0"/> <?php if (isset($gender) && $gender=="female") echo "checked";?>  Female</span>
+										
 
- 								<!--	<span class="error">* <?php //echo $genderErr;?></span> -->
- 									
+											<span> <input type="radio" name="gender" value="1"/> <?php if (isset($gender) && $gender=="male") echo "checked";?>  Male</span>
 
- 									 <div class="col-md-12">
- 									 	<div class="form-group">
- 									 		<input type="submit" value="Register" class="btn btn-primary" name="submit">
- 									 	</div>
- 									 	
- 									 </div>
+										</div> <br>
 
- 								</form>
+	 									<!--	<span class="error">* <?php //echo $genderErr;?></span> -->
+	 									
+
+	 									<div class="col-md-12">
+	 									 	<div class="form-group">
+	 									 		<input type="submit" value="Sign Up" class="btn btn-primary" name="submit">
+	 									 	</div>
+	 									 	
+	 									</div>
+
+ 									</form>
 
 								</div>
+
 							</div>
 							
-							
-						<!--	<form method="POST" action = "Myphotographer_PHP/login.inc.php">
-							partea de login-->
-							<!--	<div class="col-xs-6">
-									<h3> <u> Already have an account? </u>  </h3>
-								
-								<div class="form-group"> 
-									
-									<input type="text" class="form-control" name = "username" placeholder="Username"> <br>
-									<input type="password" class="form-control" name = "password" placeholder="Password">
-								</div> 
-								<div class="form-group">
-									<input type="submit" value="Login" class="btn btn-primary" name="submit">
-								</div>
-							 </div>
-							</form> -->
-						<!--<?php
-								//if(isset($_GET['info']) && $_GET['info'] == 'gresit'){
-								//	echo '<p> Parola este gresita! </p>' ;
-								//}
-							?>
-
-							
-							<?php
-								//if(isset($_GET['info']) && $_GET['info'] == 'exista'){
-								//	echo '<p> Usernameul exista deja!</p>' ;
-								//}
-							?>-->
-
-
-
-
 							<!-- <div class="col-md-12"> -->
 								<!-- <div class="form-group"> -->
 									<!-- <textarea name="" class="form-control" id="" cols="30" rows="7" placeholder="Message"></textarea> -->
 								<!-- </div> -->
 							<!-- </div> -->
 							
-							
-						
-					
-				
+				</div>
 			</div>
-		</div>
-		<!-- End: fh5co-contact-section -->
-		<div id="map" class="fh5co-map animate-box"></div>
+
+		<!-- End: fh5co-contact-section --> 
 			<!-- END map -->
 		<footer>
 			<div id="footer">
@@ -194,9 +164,9 @@
 						</div>
 						<div class="col-md-6 social-text-align">
 							<p class="fh5co-social-icons">
-								<a href="#"><i class="icon-twitter-with-circle"></i></a>
-								<a href="#"><i class="icon-facebook-with-circle"></i></a>
-								<a href="#"><i class="icon-instagram-with-circle"></i></a>
+								<a href="https://twitter.com/"><i class="icon-twitter-with-circle"></i></a>
+								<a href="https://www.facebook.com/"><i class="icon-facebook-with-circle"></i></a>
+								<a href="https://www.instagram.com/"><i class="icon-instagram-with-circle"></i></a>
 							</p>
 						</div>
 					</div>

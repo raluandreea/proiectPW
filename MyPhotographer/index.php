@@ -1,3 +1,7 @@
+<?php  
+	require 'MyPhotographer_PHP/DBconnection.php'; 
+	session_start();
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -64,18 +68,42 @@
 
 	<nav id="fh5co-main-nav" role="navigation">
 		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle active"><i></i></a>
-		<div class="js-fullheight fh5co-table">
-			<div class="fh5co-table-cell js-fullheight">
-				<ul>
-					<li><a href="index.php">Home</a></li>
-					<li><a href="portfolio.php">Portfolio</a></li>
-					<!-- <li><a href="services.html">Services</a></li> -->
-					<li><a href="team.php">Team</a></li>
-					<li><a href="signup.php">Sign in / Sign up</a></li>
-					<li><a href="login.php">Log in</a></li>
-				</ul>
-			</div>
-		</div>
+		<?php
+				if(!isset($_SESSION['id'])){
+					echo '
+						<div class="js-fullheight fh5co-table">
+							<div class="fh5co-table-cell js-fullheight">
+								<ul>
+									<li><a href="index.php">Home</a></li>
+									<li><a href="portfolio.php">Portfolio</a></li>
+									<!-- <li><a href="services.html">Services</a></li> -->
+									<li><a href="team.php">Team</a></li>
+									<li><a href="signup.php">Sign in / Sign up</a></li>
+									<li><a href="login.php">Log in</a></li>
+								</ul>
+							</div>
+						</div>
+					';
+				} else {
+
+					echo '
+						<div class="js-fullheight fh5co-table">
+							<div class="fh5co-table-cell js-fullheight">
+								<ul>
+									<li><a href="index.php">Home</a></li>
+									<!--<li><a href="portofolio.php">Portfolio</a></li>-->
+									<!-- <li><a href="services.html">Services</a></li> -->
+									<li><a href="team.php">Team</a></li>
+									<!--<li><a href="signup.php">Sign in / Sign up</a></li>
+									<li><a href="login.php">Log in</a></li> -->
+								</ul>
+							</div>
+						</div>
+					';
+				}
+
+		?>
+		
 	</nav>
 	
 	<div id="fh5co-page">
@@ -84,7 +112,13 @@
 				<div class="fh5co-navbar-brand">
 					<a class="fh5co-logo" href="index.php"> <i class="icon-camera"></i> <b> MyPhotographer </b></a>
 				</div>
-				<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+				<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a> <br> <br>
+				<a style="color: black;"> Autentificat ca: 
+					<?php 
+						if(isset($_SESSION['id']))
+							echo $row['username'];  
+					?>
+				</a>
 			</div>
 		</header>
 		<div id="fh5co-intro-section">
@@ -102,9 +136,9 @@
 				<ul id="filters" class="clearfix animate-box">
 					<li><span class="filter active" data-filter=".all">All</span></li>
 					<!-- <li><span class="filter" data-filter=".app">App</span></li> -->
-					<!--<li><span class="filter" data-filter=".gallery">Gallery</span></li>
+					<!--<li><span class="filter" data-filter=".gallery">Gallery</span></li>-->
 					<!-- <li><span class="filter" data-filter=".contact">Contact</span></li> -->
-					<li><span class="filter" data-filter=".discover">Discover</span></li>
+					<!--<li><span class="filter" data-filter=".discover">Discover</span></li>-->
 					<!-- <li><span class="filter" data-filter=".web">Web</span></li> -->
 				</ul>
 
@@ -112,12 +146,27 @@
 					
 					<div class="portfolio all gallery" data-cat="gallery">
 						<div class="portfolio-wrapper">				
-							<img src="images/portrait1.jpg" alt="" />
+							<a> 
+								<?php 
+									$query = "SELECT * FROM photos WHERE cale = 'images/portrait1.jpg' ";
+									$res = mysqli_query($db,$query);
+									$row = mysqli_fetch_assoc($res);
+								?> 
+								<img src="<?php echo $row['cale']; ?>" alt="" />
+							</a>
 							<div class="label">
 								<div class="label-text">
 								<!-- Sa fac o sesiune de signed in si daca e signed in sa ma directioneze spre portofolio.php, altfel sa ma directioneze spre signup.php-->
-									<a href="signup.php" class="text-title">Portraits</a>
-									<span class="text-category">Expand</span>
+
+										<?php
+											if(!isset($_SESSION['id']))
+											{
+												echo '<a href="signup.php" class="text-title">Portraits</a>';
+											} else {
+												echo '<a href="portraits.php" class="text-title">Portraits</a>';
+											}
+										?>
+										
 								</div>
 								<div class="label-bg"></div>
 							</div>
@@ -125,12 +174,18 @@
 					</div>				
 
 					<div class="portfolio all gallery " data-cat="gallery">
-						<div class="portfolio-wrapper">			
-							<img src="images/wedding1.jpg" alt="" />
+						<div class="portfolio-wrapper">	
+							<a href="portraits.php"> 		
+								<?php 
+									$query = "SELECT * FROM photos WHERE cale = 'images/wedding1.jpg' ";
+									$res = mysqli_query($db,$query);
+									$row = mysqli_fetch_assoc($res);
+								?> 
+								<img src="<?php echo $row['cale']; ?>" alt="" />
+							</a>
 							<div class="label">
 								<div class="label-text">
 									<a href="signup.php" class="text-title">Wedding & Engagements</a>
-									<span class="text-category">Expand</span>
 								</div>
 								<div class="label-bg"></div>
 							</div>
@@ -138,12 +193,19 @@
 					</div>		
 					
 					<div class="portfolio all gallery" data-cat="gallery">
-						<div class="portfolio-wrapper">						
-							<img src="images/newborn1.jpg" alt="" />
+						<div class="portfolio-wrapper">
+							<a href="portraits.php">
+								<?php 
+									$query = "SELECT * FROM photos WHERE cale = 'images/newborn1.jpg' ";
+									$res = mysqli_query($db,$query);
+									$row = mysqli_fetch_assoc($res);
+								?> 
+								<img src="<?php echo $row['cale']; ?>" alt="" />
+							</a>
 							<div class="label">
 								<div class="label-text">
 									<a href="signup.php" class="text-title">New Born</a>
-									<span class="text-category">Expand</span>
+								<!--<span class="text-category">Expand</span> -->
 								</div>
 								<div class="label-bg"></div>
 							</div>
@@ -152,11 +214,18 @@
 					
 					<div class="portfolio all gallery" data-cat="gallery">
 						<div class="portfolio-wrapper">			
-							<img src="images/nature2.jpg" alt="" />
+							<a href="portraits.php">
+								<?php 
+									$query = "SELECT * FROM photos WHERE cale = 'images/nature2.jpg' ";
+									$res = mysqli_query($db,$query);
+									$row = mysqli_fetch_assoc($res);
+								?> 
+								<img src="<?php echo $row['cale']; ?>" alt="" />
+							</a>
 							<div class="label">
 								<div class="label-text">
-									<a href="signup.php" class="text-title">Nature</a>
-									<span class="text-category">Expand </span>
+									<a href="signup.php" class="text-title"> <b> Nature </b></a>
+								<!--<span class="text-category">Expand </span> -->
 								</div>
 								<div class="label-bg"></div>
 							</div>
@@ -165,11 +234,17 @@
 								
 					<div class="portfolio all gallery" data-cat="gallery">
 						<div class="portfolio-wrapper">
-							<img src="images/car2.jpg" alt="" />
+							<a href="portraits.php">
+								<?php 
+									$query = "SELECT * FROM photos WHERE cale = 'images/car2.jpg' ";
+									$res = mysqli_query($db,$query);
+									$row = mysqli_fetch_assoc($res);
+								?> 
+								<img src="<?php echo $row['cale']; ?>" alt="" />
+							</a>
 							<div class="label">
 								<div class="label-text">
 									<a href="signup.php" class="text-title">Cars</a>
-									<span class="text-category">Expand</span>
 								</div>
 								<div class="label-bg"></div>
 							</div>
@@ -178,11 +253,17 @@
 					
 					<div class="portfolio all gallery" data-cat="gallery">
 						<div class="portfolio-wrapper">			
-							<img src="images/animals1.jpg" alt="" />
+							<a href="portraits.php">
+								<?php 
+									$query = "SELECT * FROM photos WHERE cale = 'images/animals1.jpg' ";
+									$res = mysqli_query($db,$query);
+									$row = mysqli_fetch_assoc($res);
+								?> 
+								<img src="<?php echo $row['cale']; ?>" alt="" />
+							</a>
 							<div class="label">
 								<div class="label-text">
 									<a href="signup.php" class="text-title">Animals</a>
-									<span class="text-category">Expand</span>
 								</div>
 								<div class="label-bg"></div>
 							</div>
@@ -191,11 +272,17 @@
 					
 					<div class="portfolio all gallery" data-cat="gallery">
 						<div class="portfolio-wrapper">			
-							<img src="images/family1.jpg" alt="" />
+							<a href="portraits.php">
+								<?php 
+									$query = "SELECT * FROM photos WHERE cale = 'images/family1.jpg' ";
+									$res = mysqli_query($db,$query);
+									$row = mysqli_fetch_assoc($res);
+								?> 
+								<img src="<?php echo $row['cale']; ?>" alt="" />
+							</a>
 							<div class="label">
 								<div class="label-text">
 									<a href="signup.php" class="text-title">Family</a>
-									<span class="text-category">Expand</span>
 								</div>
 								<div class="label-bg"></div>
 							</div>
@@ -204,36 +291,37 @@
 					
 					<div class="portfolio all gallery" data-cat="gallery">
 						<div class="portfolio-wrapper">			
-							<img src="images/building2.jpg" alt="" />
+							<a href="portraits.php">
+								<?php 
+									$query = "SELECT * FROM photos WHERE cale = 'images/building2.jpg' ";
+									$res = mysqli_query($db,$query);
+									$row = mysqli_fetch_assoc($res);
+								?> 
+								<img src="<?php echo $row['cale']; ?>" alt="" />
+							</a>
 							<div class="label">
 								<div class="label-text">
 									<a href="signup.php" class="text-title">Buildings</a>
-									<span class="text-category">Expand</span>
 								</div>
 								<div class="label-bg"></div>
 							</div>
 						</div>
 					</div>
 
-					<!-- <div class="portfolio all gallery" data-cat="gallery"> -->
-						<!-- <div class="portfolio-wrapper">			 -->
-							<!-- <img src="images/portfolio_pic9.jpg" alt="" /> -->
-							<!-- <div class="label"> -->
-								<!-- <div class="label-text"> -->
-									<!-- <a class="text-title">Others</a> -->
-									<!-- <span class="text-category">Expand</span> -->
-								<!-- </div> -->
-								<!-- <div class="label-bg"></div> -->
-							<!-- </div> -->
-						<!-- </div> -->
-					<!-- </div> -->
 					<div class="portfolio all contact" data-cat="contact"> 
-						<div class="portfolio-wrapper">			
-							<img src="images/birthdays1.jpg" alt="" /> 
+						<div class="portfolio-wrapper">	
+							<a href="portraits.php">
+								<?php 
+									$query = "SELECT * FROM photos WHERE cale = 'images/birthdays1.jpg' ";
+									$res = mysqli_query($db,$query);
+									$row = mysqli_fetch_assoc($res);
+								?> 
+								<img src="<?php echo $row['cale']; ?>" alt="" />
+							</a>		
+						<!--<img src="images/birthdays1.jpg" alt="" /> -->
 							<div class="label"> 
 								<div class="label-text"> 
 									<a class="text-title">Birthdays</a> 
-									<span class="text-category">Expand</span> 
 								</div>
 								<div class="label-bg"></div> 
 							</div> 
@@ -242,6 +330,7 @@
 				</div>
 			</div>
 		</div>
+
 		<!-- END fh5co-portfolio-section -->
 		<!-- <div id="fh5co-services-section"> -->
 			<!-- <div class="container"> -->
@@ -319,9 +408,9 @@
 						</div>
 						<div class="col-md-6 social-text-align">
 							<p class="fh5co-social-icons">
-								<a href="#"><i class="icon-twitter-with-circle"></i></a>
-								<a href="#"><i class="icon-facebook-with-circle"></i></a>
-								<a href="#"><i class="icon-instagram-with-circle"></i></a>
+								<a href="https://twitter.com/"><i class="icon-twitter-with-circle"></i></a>
+								<a href="https://www.facebook.com/"><i class="icon-facebook-with-circle"></i></a>
+								<a href="https://www.instagram.com/"><i class="icon-instagram-with-circle"></i></a>
 							</p>
 						</div>
 					</div>
