@@ -9,22 +9,24 @@ if(isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['pass
 
 	$sql = "SELECT * FROM register WHERE username = '$username'";
 	$result = mysqli_query($db,$sql);
-	$row = $result ->fetch_assoc();
+	$row =  mysqli_fetch_assoc($result);
 	$hash = $row['password'];
 
 	//decripteaza parola din db si verifica daca e aceeasi cu cea data in chenar
-	$check = password_verify($password, $hash);
+	$password = mysqli_real_escape_string($db, $password);
+	$password = md5($password);
 
-	if($check == 0)
+	if($password != $hash)
 	{
-		header("Location: ../signup.php>info=gresit");
+		header("Location: ../login.php?info=gresit");
 		die();
+
 	} else {
 
 		$sql = "SELECT * FROM register WHERE username = '$username' AND password = '$hash' ";
 		$result = mysqli_query($db,$sql);
 
-		if(!$row = $result->fetch_assoc())
+		if(!$row =  mysqli_fetch_assoc($result))
 		{
 			echo 'Parola sau username incorect.';
 		} else {
@@ -36,7 +38,7 @@ if(isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['pass
 
 		}
 
-		header("Location: ../index.html");
+		header("Location: ../index.php");
 	
 	
 	}

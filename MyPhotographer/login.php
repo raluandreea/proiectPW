@@ -1,3 +1,22 @@
+<?php  
+	require 'MyPhotographer_PHP/DBconnection.php'; 
+	
+	$status = session_status();
+
+	if($status == PHP_SESSION_NONE){
+	    //There is no active session
+	    session_start();
+	}else
+	if($status == PHP_SESSION_DISABLED){
+	    //Sessions are not available
+	    echo "session not available";
+	}else
+	if($status == PHP_SESSION_ACTIVE){
+	    //Destroy current and start new one
+	    session_destroy();
+	    session_start();
+	}
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -68,7 +87,7 @@
 			<div class="fh5co-table-cell js-fullheight">
 				<ul>
 					<li><a href="index.php">Home</a></li>
-					<li><a href="portfolio.php">Portfolio</a></li>
+					<!--<li><a href="portfolio.php">Portfolio</a></li>-->
 					<!-- <li><a href="services.html">Services</a></li> -->
 					<li><a href="team.php">Team</a></li>
 					<li><a href="signup.php">Sign in / Sign up</a></li>
@@ -146,7 +165,7 @@
 														<input type="password" class="form-control" name = "password" placeholder="Password">
 													</div> 
 													<div class="form-group">
-														<input type="submit" value="Login" class="btn btn-primary" name="submit">
+														<input type="submit" value="Login" class="btn btn-primary" name="submit"> 
 													</div>
 											 	</div>
 											</form>
@@ -154,6 +173,12 @@
 									';
 								} else {
 									header("Location: ../index.php");
+								}
+								if(isset($_GET['info']) && $_GET['info'] == 'gresit'){
+									echo '<p> Parola este gresita! </p>' ;
+								}
+								if(isset($_GET['info']) && $_GET['info'] == 'exista'){
+									echo '<p> Usernameul exista deja!</p>' ;
 								}
 
 							?>

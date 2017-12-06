@@ -67,7 +67,7 @@
 			<div class="fh5co-table-cell js-fullheight">
 				<ul>
 					<li><a href="index.php">Home</a></li>
-					<li><a href="portfolio.php">Portfolio</a></li>
+					<!--<li><a href="portfolio.php">Portfolio</a></li> -->
 					<!-- <li><a href="services.html">Services</a></li> -->
 					<li><a href="team.php">Team</a></li>
 					<li><a href="signup.php">Sign in / Sign up</a></li>
@@ -104,11 +104,6 @@
 									<p>Based in California,USA.
 									   - Carolina street, nr.354, blv. Holland.
 									</p>
-									<p class="fh5co-social-icons">
-										<a href="#"><i class="icon-twitter-with-circle"></i></a>
-										<a href="#"><i class="icon-facebook-with-circle"></i></a>
-										<a href="#"><i class="icon-instagram-with-circle"></i></a>
-									</p>
 								</div>
 							</div>
 						</div>
@@ -120,11 +115,6 @@
 									<h3>Ana Meher.</h3> 
 									<span>{Animal lover}</span>
 									<p>Based in Phoenix,Arizona.</p> 
-									<p class="fh5co-social-icons"> 
-										<a href="#"><i class="icon-twitter-with-circle"></i></a>
-										<a href="#"><i class="icon-facebook-with-circle"></i></a> 
-										<a href="#"><i class="icon-instagram-with-circle"></i></a> 
-									</p> 
 								</div>
 							</div>
 						</div>
@@ -136,11 +126,6 @@
 									 <h3>Harry Gordan.</h3> 
 									 <span>Car Photographer</span> 
 									 <p>Based in England.</p>
-									 <p class="fh5co-social-icons"> 
-										 <a href="#"><i class="icon-twitter-with-circle"></i></a>
-										 <a href="#"><i class="icon-facebook-with-circle"></i></a> 
-										 <a href="#"><i class="icon-instagram-with-circle"></i></a>
-									 </p> 
 								 </div> 
 							 </div> 
 						 </div>

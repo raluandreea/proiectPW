@@ -68,7 +68,7 @@
 			<div class="fh5co-table-cell js-fullheight">
 				<ul>
 					<li><a href="index.php">Home</a></li>
-					<li><a href="portfolio.php">Portfolio</a></li>
+					<!--<li><a href="portfolio.php">Portfolio</a></li> -->
 					<!-- <li><a href="services.html">Services</a></li> -->
 					<li><a href="team.php">Team</a></li>
 					<li><a href="signup.php">Sign in / Sign up</a></li>
@@ -96,17 +96,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<!-- <div class="col-md-4 col-md-push-8 animate-box"> -->
-						<!-- <h3>Our Address</h3> -->
-						<!-- <ul class="contact-info"> -->
-							<!-- <li><i class="icon-location-pin"></i>198 West 21th Street, Suite 721 New York NY 10016</li> -->
-							<!-- <li><i class="icon-phone2"></i>+ 1235 2355 98</li> -->
-							<!-- <li><i class="icon-mail"></i><a href="#">info@yoursite.com</a></li> -->
-							<!-- <li><i class="icon-globe2"></i><a href="#">www.yoursite.com</a></li> -->
-						<!-- </ul> -->
-					<!-- </div> -->
-					
-						
+				
 							<!--partea de signup-->
 							<div class="col-md-6 col-md-offset-3 text-center">
 									<h3> <a href="login.php"> <u> Already have an account? </u>  </a> </h3> 
@@ -143,13 +133,6 @@
 								</div>
 
 							</div>
-							
-							<!-- <div class="col-md-12"> -->
-								<!-- <div class="form-group"> -->
-									<!-- <textarea name="" class="form-control" id="" cols="30" rows="7" placeholder="Message"></textarea> -->
-								<!-- </div> -->
-							<!-- </div> -->
-							
 				</div>
 			</div>
 

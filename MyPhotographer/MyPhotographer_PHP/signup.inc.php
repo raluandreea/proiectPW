@@ -70,7 +70,7 @@ $result = mysqli_query($db,$sql);
 $check = mysqli_num_rows($result);
  if($check > 0)
  {
- 	 header("Location: ../signup.html?info=exista");
+ 	 header("Location: ../signup.php?info=exista");
  	 die();
  } else {
 

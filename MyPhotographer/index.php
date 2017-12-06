@@ -1,6 +1,13 @@
 <?php  
 	require 'MyPhotographer_PHP/DBconnection.php'; 
-	session_start();
+	
+	$status = session_status();
+	$id = isset($_GET['username']) ? $_GET['username'] : 0;
+
+	if($status == PHP_SESSION_NONE)
+	    //There is no active session
+	    session_start();
+
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -69,13 +76,13 @@
 	<nav id="fh5co-main-nav" role="navigation">
 		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle active"><i></i></a>
 		<?php
-				if(!isset($_SESSION['id'])){
+				if(isset($_SESSION['id'])){
 					echo '
 						<div class="js-fullheight fh5co-table">
 							<div class="fh5co-table-cell js-fullheight">
 								<ul>
 									<li><a href="index.php">Home</a></li>
-									<li><a href="portfolio.php">Portfolio</a></li>
+									<!--<li><a href="portfolio.php">Portfolio</a></li>-->
 									<!-- <li><a href="services.html">Services</a></li> -->
 									<li><a href="team.php">Team</a></li>
 									<li><a href="signup.php">Sign in / Sign up</a></li>
@@ -94,8 +101,7 @@
 									<!--<li><a href="portofolio.php">Portfolio</a></li>-->
 									<!-- <li><a href="services.html">Services</a></li> -->
 									<li><a href="team.php">Team</a></li>
-									<!--<li><a href="signup.php">Sign in / Sign up</a></li>
-									<li><a href="login.php">Log in</a></li> -->
+									 
 								</ul>
 							</div>
 						</div>
@@ -106,6 +112,7 @@
 		
 	</nav>
 	
+	
 	<div id="fh5co-page">
 		<header>
 			<div class="container">
@@ -113,13 +120,16 @@
 					<a class="fh5co-logo" href="index.php"> <i class="icon-camera"></i> <b> MyPhotographer </b></a>
 				</div>
 				<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a> <br> <br>
-				<a style="color: black;"> Autentificat ca: 
+				<!--<a style="color: black;"> Autentificat ca: 
 					<?php 
-						if(isset($_SESSION['id']))
-							echo $row['username'];  
+						//if(isset($_SESSION['id']))
+						//	echo "{$_SESSION['username']}"; 
+						//else
+						//	echo 'eroare'; 
 					?>
-				</a>
+				</a> -->
 			</div>
+			
 		</header>
 		<div id="fh5co-intro-section">
 			<div class="container">
@@ -129,6 +139,7 @@
 						<p><span>Created with <i class="icon-heart3"></i> by Ralu.</a></span></p>
 					</div>
 				</div>
+				
 			</div>
 		</div>
 		<div id="fh5co-portfolio-section">
@@ -157,15 +168,15 @@
 							<div class="label">
 								<div class="label-text">
 								<!-- Sa fac o sesiune de signed in si daca e signed in sa ma directioneze spre portofolio.php, altfel sa ma directioneze spre signup.php-->
-
-										<?php
-											if(!isset($_SESSION['id']))
-											{
-												echo '<a href="signup.php" class="text-title">Portraits</a>';
-											} else {
-												echo '<a href="portraits.php" class="text-title">Portraits</a>';
-											}
-										?>
+									<a href="portraits.php" class="text-title">Portraits</a>
+										<!--<?php
+											//if(!isset($_SESSION['username']))
+											//{
+											//	echo '<a href="signup.php" class="text-title">Portraits</a>';
+											//} else {
+											//	echo '<a href="portraits.php" class="text-title">Portraits</a>';
+											//}
+										?>-->
 										
 								</div>
 								<div class="label-bg"></div>
@@ -185,7 +196,7 @@
 							</a>
 							<div class="label">
 								<div class="label-text">
-									<a href="signup.php" class="text-title">Wedding & Engagements</a>
+									<a href = "wedd.php" class="text-title">Wedding & Engagements</a>
 								</div>
 								<div class="label-bg"></div>
 							</div>
@@ -204,7 +215,7 @@
 							</a>
 							<div class="label">
 								<div class="label-text">
-									<a href="signup.php" class="text-title">New Born</a>
+									<a href="newborn.php" class="text-title">New Born</a>
 								<!--<span class="text-category">Expand</span> -->
 								</div>
 								<div class="label-bg"></div>
@@ -224,7 +235,7 @@
 							</a>
 							<div class="label">
 								<div class="label-text">
-									<a href="signup.php" class="text-title"> <b> Nature </b></a>
+									<a href="nature.php" class="text-title"> <b> Nature </b></a>
 								<!--<span class="text-category">Expand </span> -->
 								</div>
 								<div class="label-bg"></div>
@@ -244,7 +255,7 @@
 							</a>
 							<div class="label">
 								<div class="label-text">
-									<a href="signup.php" class="text-title">Cars</a>
+									<a href="cars.php" class="text-title">Cars</a>
 								</div>
 								<div class="label-bg"></div>
 							</div>
@@ -263,7 +274,7 @@
 							</a>
 							<div class="label">
 								<div class="label-text">
-									<a href="signup.php" class="text-title">Animals</a>
+									<a href="animals.php" class="text-title">Animals</a>
 								</div>
 								<div class="label-bg"></div>
 							</div>
@@ -330,75 +341,9 @@
 				</div>
 			</div>
 		</div>
-
-		<!-- END fh5co-portfolio-section -->
-		<!-- <div id="fh5co-services-section"> -->
-			<!-- <div class="container"> -->
-				<!-- <div class="row"> -->
-					<!-- <div class="col-md-8 col-md-offset-2 text-center heading-section"> -->
-						<!-- <h2>Our Services</h2> -->
-						<!-- <h3>We offer a wide range of photographers worldwide.</h3> -->
-					<!-- </div> -->
-				<!-- </div> -->
-				<!-- <div class="row"> -->
-					<!-- <div class="col-md-4 animate-box"> -->
-						<!-- <div class="fh5co-services text-center"> -->
-							<!-- <i class="icon-heart"></i> -->
-							<!-- <div class="holder-section"> -->
-								<!-- <h3>Dedication.</h3> -->
-								<!-- <p> We are dedicated to what we do and we only have quality.</p> -->
-							<!-- </div> -->
-						<!-- </div> -->
-					<!-- </div> -->
-					<!-- <div class="col-md-4 animate-box"> -->
-						<!-- <div class="fh5co-services text-center"> -->
-							<!-- <i class="icon-laptop"></i> -->
-							<!-- <div class="holder-section"> -->
-								<!-- <h3>Connect.</h3> -->
-								<!-- <p> Connection with people worldwide.</p> -->
-							<!-- </div> -->
-						<!-- </div> -->
-					<!-- </div> -->
-					<!-- <div class="col-md-4 animate-box"> -->
-						<!-- <div class="fh5co-services text-center"> -->
-							<!-- <i class="icon-video"></i> -->
-							<!-- <div class="holder-section"> -->
-								<!-- <h3>Video Editing</h3> -->
-								<!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p> -->
-							<!-- </div> -->
-						<!-- </div> -->
-					<!-- </div> -->
-					<!-- <div class="col-md-4 animate-box"> -->
-						<!-- <div class="fh5co-services text-center"> -->
-							<!-- <i class="icon-mobile"></i> -->
-							<!-- <div class="holder-section"> -->
-								<!-- <h3>Mobile Optimization</h3> -->
-								<!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p> -->
-							<!-- </div> -->
-						<!-- </div> -->
-					<!-- </div> -->
-					<!-- <div class="col-md-4 animate-box"> -->
-						<!-- <div class="fh5co-services text-center"> -->
-							<!-- <i class="icon-gears"></i> -->
-							<!-- <div class="holder-section"> -->
-								<!-- <h3>Search Engine Optimization</h3> -->
-								<!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p> -->
-							<!-- </div> -->
-						<!-- </div> -->
-					<!-- </div> -->
-					<!-- <div class="col-md-4 animate-box"> -->
-						<!-- <div class="fh5co-services text-center"> -->
-							<!-- <i class="icon-piechart"></i> -->
-							<!-- <div class="holder-section"> -->
-								<!-- <h3>Web Marketing</h3> -->
-								<!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p> -->
-							<!-- </div> -->
-						<!-- </div> -->
-					<!-- </div> -->
-				<!-- </div> -->
-			<!-- </div> -->
-		<!-- </div> -->
-		<!-- End: fh5co-services-section -->
+		<form action="../MyPhotographer/login.php" style="text-align: center;">
+			<input type="submit" value="Log Out"><br>
+		</form>
 		<footer>
 			<div id="footer" class="fh5co-border-line">
 				<div class="container">

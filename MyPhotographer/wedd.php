@@ -144,7 +144,7 @@
 								
 								?> 
 								<a href="<?php echo $imageURL; ?>" data-fancybox="group" >
-                					<img src="<?php echo $imageURL; ?>" style="width:50%; border: 1px ridge;" >
+                					<img src="<?php echo $imageURL; ?>" style="width:50%; border: 1px ridge; border-radius:10px;" >
             					</a> 
             					<?php 
             							}
@@ -247,4 +247,3 @@
 
 	</body>
 </html>
-	
